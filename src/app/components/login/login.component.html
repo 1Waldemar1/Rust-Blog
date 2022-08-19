@@ -1,0 +1,31 @@
+<body>
+  <main>
+    <div class="circle"></div>
+    <form class="register-form-container" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="image">
+        <img src="../../../assets/web.png">
+      </div>
+      <h1 class="form-title">Sign in</h1>
+      <div class="form-field">
+        <div class="form-field">
+          <input [ngClass]="{'has-error': form.get('email')?.invalid && form.get('email')?.touched}" type="email" id="email" formControlName="email" placeholder="Email">
+          <span class="er" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+            Enter the correct email
+          </span>
+        </div>
+        <div class="form-field psw">
+          <input [ngClass]="{'has-error': form.get('password')?.invalid && form.get('password')?.touched}" type="password" id="pwd" name="password" formControlName="password" placeholder="Password">
+          <div class="input_btn active" type="button" id="eye">
+            <img src="../../../assets/view.png" alt="eye" />
+          </div>
+          <span class="er2" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+            Password must be more than 6 characters
+          </span>
+        </div>
+      </div>
+      <div class="form-buttons">
+        <button class="form-button" type="submit" [disabled]="form.invalid || form.disabled">Login</button>
+      </div>
+    </form>
+  </main>
+</body>

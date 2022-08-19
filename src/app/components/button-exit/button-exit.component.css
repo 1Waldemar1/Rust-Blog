@@ -1,0 +1,28 @@
+.logout {
+    color: #fff;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+.logout__item {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: rgba(34, 128, 252, 0.87);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    cursor: pointer;
+    transition: all .3s;
+    outline: none;
+    border-style: none;
+}
+.logout__item::-moz-focus-inner {
+    border: 0;
+}
+.logout__item:hover {
+    background-color: #fff;
+    color: rgba(34, 128, 252, 0.87);
+    box-shadow: 0 0 15px #fff;
+}

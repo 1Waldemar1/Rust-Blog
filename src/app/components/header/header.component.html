@@ -1,0 +1,33 @@
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <a class="head" routerLink="/home">
+          <img src="../assets/web.png" alt="RustBlog">
+          <h1>𝐑ust 𝐁log ™</h1>
+        </a>
+      </div>
+      <div class="col-md-8">
+        <nav>
+          <input type="checkbox" name="menu" id="btn-menu" />
+          <label for="btn-menu">&#9776;</label>
+          <ul>
+            <li class="link"><a routerLink="/home">Home</a></li>
+            <li class="link"><a routerLink="/blog">Blog</a></li>
+            <li class="link"><a routerLink="/about">About</a></li>
+            <li>
+              <div class="buttons">
+                <div class="signin">
+                  <button class="btn" routerLink="/auth">Sign in</button>
+                </div>
+                <div class="signup">
+                  <button class="btn" routerLink="/reg">Sign up</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
