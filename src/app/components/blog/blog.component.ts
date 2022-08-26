@@ -9,15 +9,17 @@ import {PostService} from "../../services/post.service";
 })
 export class BlogComponent implements OnInit {
 
+  posts: Post[] = [];
   constructor(
     private _postService: PostService
   ) { }
 
-  public get getPosts(): Post[]  {
-    return this._postService.GetPosts()
-}
-  ngOnInit(): void {
+    
 
+  ngOnInit(): void {
+    this._postService.GetPosts().subscribe({next: postsArray => this.posts = postsArray,
+    error: err => console.log(`Error: ${err.message} was happened`)})
   }
 
 }
+
