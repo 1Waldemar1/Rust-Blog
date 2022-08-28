@@ -17,8 +17,11 @@ export class BlogComponent implements OnInit {
     
 
   ngOnInit(): void {
-    this._postService.GetPosts().subscribe({next: postsArray => this.posts = postsArray,
-    error: err => console.log(`Error: ${err.message} was happened`)})
+    this._postService.GetPosts().subscribe({
+      next: postsArray => {
+        this.posts = postsArray;
+      },
+      error: err => console.log(`Error: ${err.message} was happened`)})
   }
 
 }

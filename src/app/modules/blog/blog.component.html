@@ -2,5 +2,5 @@
     <app-header></app-header>
     <br>
     <div>Hello world</div>
-    <app-post *ngFor="let item of posts" [post]="item"></app-post>
+    <p *ngFor="let item of this.posts">{{item.title}}</p>
 </div>
