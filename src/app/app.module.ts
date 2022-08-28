@@ -9,20 +9,15 @@ import {
   HeaderComponent,
   FooterComponent,
   HomeComponent,
-  BlogComponent,
   AboutComponent,
   LoginComponent,
   RegisterComponent,
-  PostComponent,
   NotFoundComponent,
-  ButtonExitComponent,
-  PostsFilterComponent
+  ButtonExitComponent
 } from './components'
 
+import { AuthLayoutComponent, SiteLayoutComponent } from './shared/layouts';
 import { AppComponent } from './app.component';
-import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.component';
-import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.component';
-
 
 @NgModule({
   declarations: [
@@ -30,16 +25,13 @@ import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.co
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    BlogComponent,
     AboutComponent,
     LoginComponent,
     RegisterComponent,
     AuthLayoutComponent,
     SiteLayoutComponent,
-    PostComponent,
     NotFoundComponent,
     ButtonExitComponent,
-    PostsFilterComponent,
   ],
   imports: [
     BrowserModule,

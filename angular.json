@@ -5,7 +5,11 @@
   "projects": {
     "Rust_Blog": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"       
+    }  
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -61,6 +65,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "port": 2000
+          },
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
@@ -94,11 +101,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "ddb4db2e-d561-4d68-8343-4ff780835467"
+    "analytics": "ddb4db2e-d561-4d68-8343-4ff780835467",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
