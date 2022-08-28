@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AboutComponent } from "./components/about/about.component";
-import { BlogComponent } from "./components/blog/blog.component";
 import { HomeComponent } from "./components/home/home.component";
 import { LoginComponent } from "./components/login/login.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
@@ -12,17 +11,19 @@ import { SiteLayoutComponent } from "./shared/layouts/site-layout/site-layout.co
 const routes: Routes = [
     {
         path: '', component: SiteLayoutComponent, children: [
-            {path: '', redirectTo: '/home', pathMatch: "full"},
-            {path: 'home', component: HomeComponent},
-            {path: 'blog', component: BlogComponent},
-            {path: 'about', component: AboutComponent},
+            
+            { path: '', redirectTo: '/home', pathMatch: "full" },
+            { path: 'blog', loadChildren: () => import("./modules/blog/blog.module").then(m => m.BlogModule) },
+            { path: 'home', component: HomeComponent },
+            { path: 'about', component: AboutComponent },
+            
         ]
     },
     {
         path: '', component: AuthLayoutComponent, children: [
-            {path: 'auth', component: LoginComponent},
-            {path: 'reg', component: RegisterComponent},
-            {path: '**', component: NotFoundComponent}
+            { path: 'auth', component: LoginComponent },
+            { path: 'reg', component: RegisterComponent },
+            { path: '**', component: NotFoundComponent }
         ]
     }
 ]
